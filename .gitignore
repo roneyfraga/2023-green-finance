@@ -1,0 +1,13 @@
+_book/
+/.quarto/
+*_cache/
+*_files
+quarto-ex-artigo/*_files
+quarto-ex-html/*_files/
+quarto-ex-html/*.html
+quarto-ex-revealjs/*_files/
+quarto-ex-revealjs/mini/
+.Rproj.user
+.Rhistory
+*.html
+.DS_Store

@@ -1,0 +1,468 @@
+---
+format: 
+  revealjs:
+    hash-type: number
+    transition: fade
+    auto-stretch: false
+    self-contained: true
+    controls: true
+    height: 900
+    width: 1600
+    logo: images/ufmt-marca/PNG/Marca_UFMT_Horizontal.png
+    footer: <https://roneyfraga.com/class/2023-green-finance>
+    slide-number: c/t
+    fig-cap-location: top
+knitr: 
+  opts_chunk: 
+    echo: false
+bibliography: references.bib
+---
+
+##  {#TitleSlide data-menu-title="TitleSlide" background-color="#303436" background-position="left" background-size="contain"}
+
+::: {style="position: absolute; left: 480px; top: 200px; height: 525px; width: 1500px; background-color: #014465; padding: 20px; padding-left: 50px; box-shadow: 15px 15px 0px 0px #a9bcd2; border-radius: 5px;"}
+[Emerging Scientific Research]{style="font-size: 80px; font-weight: bold; line-height: 1em; margin: 0px"}
+
+[on Green Finance]{style="font-size: 60px; font-weight: bold; line-height: 1em; margin: 0px"}
+
+<br>
+
+[Roney Fraga Souza]{style="font-size: 40px; font-weight: bold;"}
+
+[Federal University of Mato Grosso]{style="font-size: 35px; font-weight: bold;"} 
+
+<br>
+
+[2023-06-30]{style="font-size: 35px; font-weight: bold;"} 
+
+:::
+
+## TL;DR in 18th century
+
+<br> <!-- espaço vertical -->
+
+**Too Long; Didn't Read.**
+
+<br> <!-- espaço vertical -->
+
+In the eighteenth century, the first tentative steps were taken towards specialized journals and reviews, in a vain attempt to contain or at least rationalize the growing wave of publications [@SollaPrice1976].
+
+As early as the eighteenth century, the main objective of the Philosophical Transactions of the Royal Society and the Journal des Sçavans was to assimilate works and letters that were already too numerous for an individual to follow in his daily reading and correspondence [@SollaPrice1976].
+
+## Science Growth {.smaller}
+
+::: columns
+::: {.column width="70%"}
+![](images/bornmann2015.png)
+:::
+
+::: {.column width="30%"}
+- @Bornmann2015
+ - growth rates: 
+   - from less than 1% up to the middle of the 18th century, 
+   - to 2 to 3% up to the period between the two world wars, 
+   - and 8 to 9% to 2010
+:::
+:::
+
+## Patents Growth {.smaller}
+
+<br>
+
+::: columns
+::: {.column width="70%"}
+![](images/patentes.png){ width=100% }
+:::
+
+::: {.column width="30%"}
+- @Zhang2015 
+  - Exponential growth and the shifting global center of gravity of science production.
+:::
+:::
+
+## World Storage {.smaller}
+
+::: columns
+::: {.column width="70%"}
+![](images/storage-capacity.png)
+:::
+
+::: {.column width="30%"}
+- @Hilbert2011 
+- The global data volume was predicted to grow exponentially from 4.4 zettabytes to 44 zettabytes between 2013 and 2020. By 2025, IDC predicts there will be 163 zettabytes of data [@Reinsel2017].
+
+- megabyte  MB 10^6
+- gigabyte  GB 10^9
+- terabyte  TP 10^12
+- petabyte  MB 10^15
+- exabyte   EB 10^18
+- zettavyte ZB 10^21
+:::
+:::
+
+## Data and Methods for STI {.smaller}
+
+::: panel-tabset 
+
+## Core {.smaller}
+
+<br>
+
+::: columns
+::: {.column width="60%"}
+```{dot}
+digraph G {
+  fontname="Helvetica,Arial,sans-serif"
+  node [fontname="Helvetica,Arial,sans-serif"]
+  fontsize = 55;
+  edge [fontname="Helvetica,Arial,sans-serif", arrowsize=3, penwidth = 3]
+  graph [rankdir=LR, ranksep=3, nodesep=.6];
+
+subgraph cluster_sources {
+		node [style=filled];
+		label = "Sources";
+    fontsize = 55;
+		color=black;
+
+  subgraph cluster_science {
+  		node [style=filled];
+  		label = "Scientific Articles";
+      fontsize = 50;
+  		color=black;
+
+  s1 [fontsize=45, shape=ellipse, fillcolor = white, color=red, fontcolor="#ff0000", label="Web of Science"];
+  s2 [fontsize=45, shape=ellipse, fillcolor = white, color=blue, fontcolor="#0000ff", label="Scopus"];
+  }
+
+  s3 [fontsize=45, shape=ellipse, fillcolor = white, color="#453a4e", fontcolor="#453a4e", label="Lattes"]
+
+  subgraph cluster_patent {
+  		node [style=filled];
+  		label = "Patents";
+      fontsize = 50;
+  		color=black;
+  s4 [fontsize=45, shape=ellipse, fillcolor = white, color="#008000", fontcolor="#008000", label="Derwnet"]
+  s5 [fontsize=45, shape=ellipse, fillcolor = white, color="#ee82ee", fontcolor="#ee82ee", label="EPO"]
+  s6 [fontsize=45, shape=ellipse, fillcolor = white, color="#094152", fontcolor="#094152", label="INPI"]
+  s7 [fontsize=45, shape=ellipse, fillcolor = white, color="#4b0082", fontcolor="#4b0082", label="USPTO"]
+  s8 [fontsize=45, shape=ellipse, fillcolor = white, color="#92b8e7", fontcolor="#92b8e7", label="Google Patents"]
+  }
+
+  s9 [fontsize=45, shape=ellipse, fillcolor = white, color="#ffa500", fontcolor="#ffa500", label="Users Data"]
+}
+
+subgraph cluster_analysis {
+		node [style=filled];
+		label = "Analysis";
+    fontsize = 55;
+		color=black;
+
+  subgraph cluster_collaboration {
+  		node [style=filled];
+  		label = "Collaboration";
+      fontsize = 45;
+  		color=black;
+    collaboration [fontsize=45, shape=diamand, color=white, label="Author \n University \n Regional \n Country"]
+  	}
+    
+  subgraph cluster_citation {
+  		node [style=filled];
+      fontsize = 50;
+    citation [fontsize=45, shape=diamand, color=white, label="Direct Citation \n Co-citation \n Bibliographic Coupling"]
+  		label = "Citations";
+  		color=black
+  	}
+  
+    g1 [fontsize=45, shape=diamand, color=white, label="Academic Genealogy"]
+    g2 [fontsize=45, shape=diamand, color=white, label="Patents Networks"]
+    g3 [fontsize=45, shape=diamand, color=white, label="People and Expertises"]
+
+	}
+
+  # web of science
+  s1 -> citation [color="#ff0000"];
+  s1 -> collaboration [color="#ff0000"];
+  s1 -> g3 [color="#ff0000"];
+
+  # scopus
+  s2 -> citation [lhead=cluster_citation, color="#0000ff"];
+  s2 -> collaboration [lhead=cluster_collaboration, color="#0000ff"];
+  s2 -> g3 [color="#0000ff"];
+
+  # lattes
+  s3 -> collaboration [color="#303a4e"];
+  s3 -> g1 [color="#303a4e"];
+  s3 -> g2 [color="#303a4e"];
+  s3 -> g3 [color="#303a4e"];
+
+  # patentes
+  s4 -> g2 [color="#008000"];
+  s5 -> g2 [color="#ee82ee"];
+  s6 -> g2 [color="#094152"];
+  s7 -> g2 [color="#4b0082"];
+  s8 -> g2 [color="#92b8e7"];
+
+  s9 -> g3 [color="#ffa500#92b8e7"];
+
+}
+```
+:::
+
+::: {.column width="40%" .smaller}
+- Source of data and analysis:
+  - WoS = Web of Science; 
+  - EPO = European Patent Office; 
+  - INPI = National Institute of Industrial Property; 
+  - USPTO = United States Patent and Trademark Office.
+:::
+:::
+
+## Networks
+
+::: columns
+::: {.column width="50%"}
+
+![](images/redes2.png){ width=90% }
+
+- @Shibata2009; @Batagelj2013; @Barabasi2016.
+:::
+
+::: {.column width="50%" .smaller}
+```{r}
+#| fig-width: 6
+#| fig-height: 6
+# Load data
+library(networkD3)
+data(MisLinks)
+data(MisNodes)
+
+# Plot
+networkD3::forceNetwork(Links = MisLinks, Nodes = MisNodes, Source = "source",
+             Target = "target", Value = "value", NodeID = "name",
+             Group = "group", opacity = 0.9,
+             )
+```
+:::
+:::
+
+## Hubs
+
+::: columns
+::: {.column width="50%"}
+Topological rules by @Guimera2005.
+
+Intra-group importance:
+
+$$
+z_i = {k_i - \bar k_{s_i} \over \sigma_{k_{s_i}}}
+$$
+
+Between groups importance:
+
+$$
+P_i = 1 - \sum_{s=1}^{S} \left({k_{s_i} \over K_i} \right)^2
+$$
+:::
+
+::: {.column width="50%"}
+![](images/Zi_Pi_colors.png){ width=70% }
+
+- **Hubs:** R7, R6 and R5 
+- **non-Hubs**: R4, R3, R2, R1
+:::
+:::
+
+## Text Mining
+
+::: columns
+::: {.column width="60%"}
+
+**Basic Approach**
+
+<br>
+
+**Part of Speech**
+
+![](images/part-to-speech.png)
+
+[Source: <https://www.kaianalytics.com/post/5-text-analysis-nlp-buzzwords>]{style="font-size: 20px"}
+:::
+
+::: {.column width="40%" .smaller}
+
+<br>
+
+**Linguist Filters**
+
+![@Frantzi2000](images/linguistic-filter.png){ width=70% }
+
+**Terms (keyword) importance**
+
+![](images/tfidf.jpg)
+
+[Source: <https://ibb.co/4Pn0YCF>]{style="font-size: 20px"}
+:::
+:::
+
+## STM
+
+::: columns
+::: {.column width="60%"}
+![](images/stm4.png){ width=60% }
+
+@Roberts2019
+:::
+
+
+::: {.column width="40%"}
+![](images/stm5.png){ width=70% }
+:::
+:::
+
+:::
+
+## Emerging Technologies Literature {.smaller}
+
+::: columns
+::: {.column width="60%"}
+![](images/xu2019-fig5.png){ width=70% }
+
+- @Xu2019
+:::
+
+::: {.column width="40%"}
+- @Rotolo2015: 
+  i) radical novelty, 
+  ii) relatively fast growth, 
+  iii) coherence, 
+  iv) prominent impact, and 
+  v) uncertainty and ambiguity. 
+
+- @Carley2017: 
+  i) novelty, 
+  ii) persistence, 
+  iii) community and 
+  iv) growth.
+
+- @Small2014 and @Carley2018: *EScore*.
+
+- @Burmaoglu2019: emergence as: 
+  i) Philosophy of Science, 
+  ii) Complexity Theory, and 
+  iii) Evolutionary Economics.
+:::
+:::
+
+## Green Finance: @Maria2023 {.smaller}
+
+::: panel-tabset 
+
+### Cover
+
+![](images/maria2023-cover.png){ width=80% }
+
+### Method
+
+![](images/maria2023-method.png){ width=60% }
+
+### Query 
+
+![](images/maria2023-query.png)
+
+- 3663 documents collected from the Scopus database.
+
+### Research Questions 
+
+<br>
+
+- **RQ1**: is it possible to identify different groups within the green finance research field?
+
+<br>
+
+- **RQ2**: if so, what are the characteristics of these groups?
+
+<br>
+
+- **RQ3**: what are the field’s most prestigious articles and topics? What are their contributions to the literature?
+
+:::
+
+::: footer
+<https://www.mdpi.com/2071-1050/15/2/967>
+:::
+
+
+## Green Finance: Results {.smaller}
+
+::: panel-tabset 
+
+### Growth 
+
+::: columns
+::: {.column width="70%"}
+```{r}
+#| fig-width: 11
+#| fig-height: 8
+
+library(highcharter)
+
+rio::import('rawfiles/dados-crescimento-geral.csv') -> d2
+
+highcharter::hchart(d2, "column", hcaes(x = Year, y = Papers), name = "Publications", showInLegend = TRUE) |>
+   highcharter::hc_add_series(d2, "line", hcaes(x = Year, y = Predicted), name = "Predicted", showInLegend = TRUE) |> 
+   highcharter::hc_add_theme(hc_theme_google()) |>
+   highcharter::hc_navigator(enabled = TRUE)  |> 
+   highcharter::hc_exporting(enabled = TRUE, filename = 'groups_growth') |>
+   highcharter::hc_xAxis(plotBands = list(list(from = 2020, to = 2020, color = "#330000")))
+```
+:::
+
+::: {.column width="30%"}
+
+Green Finance Analysis 1990-2020
+<ul>
+  <li> Growth Rate 22% </li>
+  <li> Doubling time  3.4 Years </li>
+</ul>
+
+<br>
+
+Scopus Analysis 1990-2020
+<ul>
+  <li> Growth Rate 5.5% </li>
+  <li> Doubling time  13 Years </li>
+</ul>
+:::
+:::
+
+### Groups
+
+![](images/maria2023-groups-growth.png){ width=60% }
+
+### Network 
+
+![](images/maria2023-network.png){ width=85% }
+
+### Table 2
+
+![](images/maria2023-tab2.png){ width=85% }
+
+### Table 3
+
+![](images/maria2023-tab3.png)
+
+### Table 4
+
+![](images/maria2023-tab4.png)
+
+### Table 5
+
+![](images/maria2023-tab5.png){ width=70% }
+
+:::
+
+::: footer
+<https://www.mdpi.com/2071-1050/15/2/967>
+:::
+
+## References
